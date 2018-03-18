@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>NYU Course Evaluation Login</title>
+    <style type="text/css">
+      article{
+        text-align:center;
+        font-weight:bold;
+        font-size:2vh;
+      }
+
+      img{
+        width:100%;
+        height:20vh;
+      }
+
+    
+      .decorate{
+        margin-top:5vh;
+        border:5px double purple;
+        border-radius:20px;
+        padding:5%;
+      }
+
+      form{
+        margin:2vh;
+        border:3px solid black;
+      }
+
+      .seperate{
+        margin:1vh;
+      }
+
+      .seperate_more{
+        margin:2vh;
+      }
+
+      iframe{
+      	width:100%;
+      	height:60vh;
+      }
+      a{
+      	color:purple;
+      }
+
+      a:hover{
+      	background:purple;
+      	color:white;
+      }
+      
+    </style>
+  </head>
+  <body>
+  <header class="container">
+    <section class="row">
+      <article class="col-sm-12">
+        <img src="img/tandon_long_color.jpg" alt="Tandon_logo">
+      </article>
+    </section>
+  </header>
+
+  <section class="container">
+  	<section class="row">
+  	   <article class="col-sm-12 seperate">
+        	<h1 class="decorate">Thanks for completing the evalution</h1>
+        	<nav class="nav nav-pills nav-fill col-sm-12">
+			  <a class="nav-item nav-link" href="https://www.nyu.edu/life/information-technology/instructional-technology-support/instructional-technology-tools-and-services/nyu-classes.html">NYU Classes</a>
+			  <a class="nav-item nav-link" href="http://albert.nyu.edu/albert_index.html">NYU Albert</a>
+			  <a class="nav-item nav-link" href="https://www.nyu.edu/life/information-technology/communication-and-conferencing/nyu-email.html">NYU Gmail</a>
+			  <a class="nav-item nav-link " href="https://www.google.com/">Google</a>
+			  <!--JS-->
+			</nav>
+        	
+      </article>
+  	</section>
+  </section>
+ 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

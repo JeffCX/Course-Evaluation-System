@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>NYU Course Evaluation Login</title>
+    <script type="text/javascript">
+      window.onload =function(){
+        var key = document.getElementById("Primary_Key");
+        var Form_Submit = document.getElementById("Form_Submit");
+        var login = document.getElementById("LOGIN");
+        login.onclick = function(){
+          if  (key.value != "xc1008"){
+          Form_Submit.action = 'Prefessor_Page.php';
+        }}
+        
+        
+      }
+    </script>
+    <style type="text/css">
+      article{
+        text-align:center;
+        font-weight:bold;
+        font-size:2vh;
+      }
+
+      img{
+        width:100%;
+        height:20vh;
+      }
+
+    
+      .decorate{
+        margin-top:10vh;
+        border:10px double purple;
+        border-radius:20px;
+        padding:10%;
+      }
+
+      form{
+        margin:2vh;
+        border:3px solid black;
+      }
+
+      .seperate{
+        margin:1vh;
+      }
+
+      .seperate_more{
+        margin:2vh;
+      }
+
+      .ali{
+        float:right;
+      }
+      
+    </style>
+  </head>
+  <body>
+  <header class="container">
+    <section class="row">
+      <article class="col-sm-12">
+        <img src="{{url_for('static',filename='img/tandon_long_color.jpg')}}" alt="Tandon_logo">
+      </article>
+    </section>
+  </header>
+
+  <section class="container">
+    <article class="row">
+      <section class="col-sm-12 decorate">
+          <h1>Welcome To NYU Course Evalution System</h1>
+          <form action="" id = "Form_Submit" method="post">
+            <section class="container">
+              <section class="row seperate">
+                <article class="col-sm-6">
+                  Username:
+                </article>
+                  <input type="text" name="username" class="col-sm-6" id="Primary_Key" value={{request.form.username}}/>
+              </section>
+              <section class="row seperate">
+                <article class="col-sm-6">
+                  Password:
+                </article>       
+                  <input type="password" name="password" value='{{request.form.password}}' class="col-sm-6">
+
+              
+
+              </section>
+              <section class="row seperate_more">
+                  <input type="submit" class="col-sm-5 btn btn-primary" value='login' />
+
+                  <button type="button" class="btn btn-primary col-sm-5 offset-md-2" data-toggle="modal" data-target="#exampleModal111">
+                  Sign up
+                </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal111" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                 <div class="modal-body">
+                  <form method='post'>
+                    <ul class='list-group'>
+                      <li class='list-group-item'>
+                        <pre>Username:  <input type="text" name="username_reg" class='ali' value='{{request.form.username_reg}}'> </pre>
+                      </li>
+
+                      <li class='list-group-item'>
+                        <pre>Password:  <input type="password" name="password_reg" class='ali' value='{{request.form.password_reg}}'> </pre>
+                      </li>
+
+                      <li class='list-group-item'>
+                        <pre>Confirm:  <input type="password" name="confirm_password" class='ali' value='{{request.form.confirm_password}}'> </pre>
+                      </li>
+
+                      <li class='list-group-item'>
+                        <pre>email:  <input type="email" name="email" class='ali' class='request.form.email'> </pre>
+                      </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" class="col-sm-5 btn btn-primary" value='login' />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+              </section>
+          </section>
+
+          <form>
+      </section>
+    </article>
+  </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
