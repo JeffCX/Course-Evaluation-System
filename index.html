@@ -7,19 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>NYU Course Evaluation Login</title>
-    <script type="text/javascript">
-      window.onload =function(){
-        var key = document.getElementById("Primary_Key");
-        var Form_Submit = document.getElementById("Form_Submit");
-        var login = document.getElementById("LOGIN");
-        login.onclick = function(){
-          if  (key.value != "xc1008"){
-          Form_Submit.action = 'Prefessor_Page.php';
-        }}
-        
-        
-      }
-    </script>
+    <script type="text/javascript"></script>
     <style type="text/css">
       article{
         text-align:center;
@@ -58,12 +46,20 @@
       }
       
     </style>
+
+    <script type="text/javascript">
+      window.onload =function() {
+        document.getElementById("register").onclick =function(){
+         document.getElementById("Form_Submit").action="/register/"
+        }
+      }
+    </script>
   </head>
   <body>
   <header class="container">
     <section class="row">
       <article class="col-sm-12">
-        <img src="{{url_for('static',filename='img/tandon_long_color.jpg')}}" alt="Tandon_logo">
+        <img src='assets/tandon_long_color.jpg' alt="Tandon_logo">
       </article>
     </section>
   </header>
@@ -72,26 +68,22 @@
     <article class="row">
       <section class="col-sm-12 decorate">
           <h1>Welcome To NYU Course Evalution System</h1>
-          <form action="" id = "Form_Submit" method="post">
+          <form action="/login/" id = "Form_Submit" method="post">
             <section class="container">
               <section class="row seperate">
                 <article class="col-sm-6">
                   Username:
                 </article>
-                  <input type="text" name="username" class="col-sm-6" id="Primary_Key" value={{request.form.username}}/>
+                  <input type="text" name="username" class="col-sm-6" id="Primary_Key" />
               </section>
               <section class="row seperate">
                 <article class="col-sm-6">
                   Password:
                 </article>       
-                  <input type="password" name="password" value='{{request.form.password}}' class="col-sm-6">
-
-              
-
+                  <input type="password" name="password" value='' class="col-sm-6">
               </section>
               <section class="row seperate_more">
                   <input type="submit" class="col-sm-5 btn btn-primary" value='login' />
-
                   <button type="button" class="btn btn-primary col-sm-5 offset-md-2" data-toggle="modal" data-target="#exampleModal111">
                   Sign up
                 </button>
@@ -107,28 +99,31 @@
                   </button>
                 </div>
                  <div class="modal-body">
-                  <form method='post'>
                     <ul class='list-group'>
                       <li class='list-group-item'>
-                        <pre>Username:  <input type="text" name="username_reg" class='ali' value='{{request.form.username_reg}}'> </pre>
+                        <pre>Username:  <input type="text" name="username_reg" class='ali' value='' id="username_reg"> </pre>
                       </li>
 
                       <li class='list-group-item'>
-                        <pre>Password:  <input type="password" name="password_reg" class='ali' value='{{request.form.password_reg}}'> </pre>
+                        <pre>Password:  <input type="password" name="password_reg" class='ali' value='' id="password_reg"> </pre>
                       </li>
 
                       <li class='list-group-item'>
-                        <pre>Confirm:  <input type="password" name="confirm_password" class='ali' value='{{request.form.confirm_password}}'> </pre>
+                        <pre>Confirm:  <input type="password" name="confirm_password" class='ali' value='' id="confirm_password"> </pre>
                       </li>
 
                       <li class='list-group-item'>
-                        <pre>email:  <input type="email" name="email" class='ali' class='request.form.email'> </pre>
+                        <pre>email:  <input type="email" name="email_reg" class='ali' class='' id="email_reg"> </pre>
+                      </li>
+
+                      <li class='list-group-item'>
+                        <pre>Permission Code:  <input type="text" name="Permission_code" class='ali' class='' placeholder="Please fill in the permission code if you sign up as a prefessor" id="code"> </pre>
                       </li>
                     </ul>
                 </div>
                 <div class="modal-footer">
-                  <input type="submit" class="col-sm-5 btn btn-primary" value='login' />
-                  </form>
+                  <input type="submit" class="col-sm-5 btn btn-primary" value='Sign up' id="register" / >
+              
                 </div>
               </div>
             </div>

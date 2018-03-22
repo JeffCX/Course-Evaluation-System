@@ -1,0 +1,7 @@
+The basic principle behind session is that a server maintains information for every single client and clients rely on unique session id's to access this information when users visit the we bapplication the server will create a new session with the following three steps as needs
+
+global session mangaer 
+keep session id unique
+have one session for every user
+session storage in memory,file or database
+deal with expired sessions

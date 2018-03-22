@@ -106,7 +106,7 @@
       </article>
     </section>
   </header>
-  <form method="post" action="">
+  <form method="post" action="/submit_Eval/">
   <section class="container">
     <article class="row">
       <section class="col-sm-12 decorate">
@@ -141,10 +141,9 @@
             </li>
           </ul>
 
-          <!--1-->
+       
           <ul>
-            <li class="list-group-item active">Clarity of Expectations or Directions
-</li>
+            <li class="list-group-item active">Clarity of Expectations or Directions</li>
             <li class="list-group-item form-check">
              <input type="checkbox" class="form-check-input" id="Instructor_q2_c1" name = "Instructor_Clarity[]" value="1">
               <label class="form-check-label" for="Instructor_q2_c1">The instructor (or GSI) explained concepts clearly
@@ -175,7 +174,7 @@
             </li>
           </ul>
 
-           <!--3-->
+     
           <ul>
             <li class="list-group-item active">Helpfulness/Availability</li>
             <li class="list-group-item form-check">
@@ -210,7 +209,7 @@
           </ul>
             
 
-             <!--1-->
+             
           <ul>
             <li class="list-group-item active">Useful/Clear Feedback on Performance</li>
             <li class="list-group-item form-check">
@@ -281,10 +280,13 @@
 
           <ul>
             <li class="list-group-item active">Overall Teaching Effectiveness</li>
+            
             <li class="list-group-item">
-              <label for="Instructor_Comment" ">Considering both the limitations and possibilities of the subject matter and the course, how would you comment the overall effectiveness of this (graduate student) instructor?</label>
+              <label for="Instructor_Comment"> Considering both the limitations and possibilities of the subject matter and the course, how would you comment the overall effectiveness of this (graduate student) instructor?</label>
               <textarea class="form-control" id="Instructor_Comment" rows="3" name="Instructor_Comment"></textarea>
+
             </li>
+
             <li class="list-group-item">
            How would you rate the overall effectiveness of the instructor’s (or GSI’s) teaching?
             <input type="range"  id="Instructor_Rate" name="Instructor_Rate" value="10" max="10"class="responsive" oninput="document.getElementById('Rate').innerHTML=document.getElementById('Instructor_Rate').value"> <span class="btn btn-primary responsive_button" id="Rate">10</span>
@@ -326,7 +328,7 @@
             </li>
           </ul>
 
-          <!--1-->
+     
           <ul>
             <li class="list-group-item active">Application & Specific Skill Development
             </li>
@@ -355,7 +357,7 @@
             </li>
           </ul>
 
-           <!--3-->
+    
           <ul>
             <li class="list-group-item active">Theory/Content Knowledge</li>
             <li class="list-group-item form-check">
@@ -382,16 +384,16 @@
               </label>
             </li>
           </ul>
-            
+             
           <ul>
             <li class="list-group-item active">Overall Teaching Effectiveness</li>
             <li class="list-group-item">
-              <label for="Course_Comment" ">Considering both the limitations and possibilities of the subject matter and the course, how would you comment the overall effectiveness of this Course?</label>
+              <label for="Course_Comment">Considering both the limitations and possibilities of the subject matter and the course, how would you comment the overall effectiveness of this Course?</label>
               <textarea class="form-control" id="Course_Comment" rows="3" name="Course_Comment"></textarea>
             </li>
             <li class="list-group-item">
            How would you rate the Course
-       
+      
             <input type="range"  id="Course_Rate" name="Course_Rate" value="10" max="10" class="responsive" oninput="document.getElementById('Rate_Course').innerHTML=document.getElementById('Course_Rate').value"> <span class="btn btn-primary responsive_button" id="Rate_Course">10</span>
             </li>
           </ul>
@@ -407,15 +409,15 @@
             <li class="list-group-item active">Advice and Improvement</li>
             <li class="list-group-item">
               <label for="Student_Comment" >Please identify area(s) where you think the course (or section) could be improved.</label>
-              <textarea class="form-control" id="Student_Comment" rows="3" name="Student_Comment"></textarea>
+              <textarea class="form-control" id="Student_Comment_improve" rows="3" name="Student_Comment_improve"></textarea>
             </li>
 
             <li class="list-group-item">
               <label for="Student_Comment" >What advice would you give to another student who is considering taking this course (or section)?</label>
-              <textarea class="form-control" id="Student_Comment" rows="3" name="Student_Comment"></textarea>
+              <textarea class="form-control" id="Student_Comment_advice" rows="3" name="Student_Comment_advice"></textarea>
             </li>
             <input type="submit" name="sub" class="btn btn-primary responsive_button_sub">
-          </ul>
+          </ul> 
       </section>
     </article>
   </section>

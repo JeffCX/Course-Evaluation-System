@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Optional theme -->
+
+    
+    <title>NYU Course Evaluation Login</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#look_up").on('click', function() {
+          $.ajax({
+            url: "/get_data/",
+            method: "GET",
+            success: function(data) {
+              var data=data.replace("[","").replace("]","").split(",")
+              var Instructor_chart=[]
+              for(var i=1;i<6;i++){
+                Instructor_chart.push(data[i].replace(" ","").length-1)
+              }
+             
+               document.getElementById("show_create").style.display="none"
+            document.getElementById("show_report").style.display="block"
+
+
+            Highcharts.chart('container_instructor', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Instructor Evaluation' 
+                },
+                subtitle: {
+                    text: 'Source: Class CS2124' //get this from databae
+                },
+                xAxis: {
+                    categories: ['Prsentation', 'Clarity', 'Helpfullness', 'Feedback', 'Inspriation'],
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                tooltip: {
+                    valueSuffix: null
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    name: 'Rate',
+                    data:  Instructor_chart//get this from database
+                }]
+            });
+
+            Highcharts.chart('container_course', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Instructor Evaluation' 
+                },
+                subtitle: {
+                    text: 'Source: Class CS2124' //get this from databae
+                },
+                xAxis: {
+                    categories: ["Content","Skill Dvelopment","Theory Knowledge"],
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                tooltip: {
+                    valueSuffix: null
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    name: 'Rate',
+                    data: [3, 2, 1]//get this from database
+                }]
+            });
+            },
+          });
+        });
+      });
+
+
+    </script>
+    <script type="text/javascript">
+      window.onload = function (){
+        document.getElementById("create_class").onclick =function(){
+          document.getElementById("show_create").style.display="block"
+          document.getElementById("show_report").style.display="none"
+        }
+
+
+        
+
+        document.getElementById("look_up").onclick =function(){
+
+         
+        }
+      }
+       
+     
+    </script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+    <style type="text/css">
+      body{
+         background: linear-gradient(white,#f2edf1,white);
+      }
+
+      img{
+        height:20vh;
+      }
+      .left_decerate{
+
+        border-bottom:2vh solid purple;
+        border-bottom-left-radius: 20vh;
+        text-align:center;
+      }
+
+
+
+      img{
+        border:none;
+        padding:none;
+      }
+
+      .decorate{
+        margin-top:10vh;
+        border-left:10px double purple;
+        border-right:10px double purple;
+        border-radius:20px;
+        box-shadow:2px 1px 2px black;
+        padding:5%;
+      }
+      button{
+        margin:auto;
+        display: block;
+      }
+       .seperate_more{
+        margin:2vh;
+      }
+
+      .pretty{
+        margin-left:2vh;
+      }
+
+      .form-check-label{
+        margin-left:5vh;
+      }
+
+      .rate{
+        width:90%;
+      }
+
+      .highlight{
+        background:purple;
+        color:white;
+      }
+
+      header{
+        background:purple;
+        height:10vh;
+        padding:none;
+      }
+
+      h1{
+        color:white;
+        font-size:5vh;
+        line-height: 10vh;
+        display:inline-block;
+      }
+
+      b{
+        font-size:3vh;
+        line-height: 10vh;
+        margin-right:2vh;
+        color:white;
+      }
+
+      button{
+        display:inline-block;
+      }
+
+      .to_right{
+        text-align:right;
+        display:inline-block;
+      }
+
+      
+
+      button{       
+        margin-bottom:2%;
+      }
+
+      article{
+        text-align: center;
+      }
+
+    
+      .seperate_top{
+        margin-top:3vh;
+      }
+
+      input{
+        text-align: center;
+      }
+
+      li{
+        width:50%
+
+      }
+
+      ul{
+        margin-top: 10vh;
+      }
+    </style>
+
+  </head>
+  <body>
+  <header class="container-fluid">
+    <section class="row">
+       <article class="col-sm-4">
+        <h1>NYU Course Evalution</h1>
+      </article>
+        <section class="col-sm-4 offset-sm-4 to_right">
+          <b>Welcome</b>
+          <button type="button"><a href="/">Log Out</a></button>
+        </section>
+    </section>
+  </header>
+ <nav class="navbar navbar-light">
+
+    <button class="btn btn-outline-success" type="button" id="create_class">Create Class</button>
+    <button class="btn btn-outline-success" type="button" id="look_up" >Look Up Class Report</button>
+
+ 
+</nav>
+      
+
+
+<section  class="container-fluid">
+
+<section class="row">
+      <div class="col-sm-12 offset-sm-3" id="show_create" style="display: block;">
+        <ul class="list-group form-group">
+          <li class="list-group-item">
+            
+    <input type="text" class="form-control" placeholder="Enter Course Name" name="CourseName">
+
+          </li>
+          <li class="list-group-item">
+          
+    <input type="email" class="form-control"  placeholder="Enter Course ID (Exp:CS2124)" name="CourseID">
+          </li>
+          <li class="list-group-item">       
+           <input type="text" class="form-control" placeholder="Enter Instructor's ID" ame="InstructorID">
+          </li>
+         <li class="list-group-item">     
+           <input type="email" class="form-control" placeholder="Enter Semseter: (Exp:2018 Spring)" name="semseter">
+          </li>
+        </ul>
+      </div>
+    <div class="col-sm-12" id="show_report" style="display: none;">
+      
+<div id="container_instructor" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="container_course" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto;margin-top: 10vh;"></div>
+    <script type="text/javascript">
+
+
+     
+
+    </script>
+
+
+    </div>
+   </section>
+ </section>
+        
+<!--Calendar template credit to:https://github.com/timcreative/freebies/blob/master/LICENSE.md-->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  </body>
+</html>

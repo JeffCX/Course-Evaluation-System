@@ -9,110 +9,10 @@
 
     <title>NYU Course Evaluation Login</title>
     <script type="text/javascript">
-      window.onload = function (){
-        var Block_Create_Class = document.getElementById('Block_Create_Class');
-        var Block_Look_Up = document.getElementById('Block_Look_Up');
-        var Block_Cal = document.getElementById('Block_Cal');
-        
-        var Button_Create_Class = document.getElementById("Button_Create_Class");
-        var Button_Look_Up = document.getElementById("Button_Look_Up");
-        var Button_Cal = document.getElementById("Button_Cal");
-        
-        var array_Button = [Button_Create_Class,Button_Look_Up,Button_Cal]
-        var array_Block = [Block_Create_Class,Block_Look_Up,Block_Cal]
-        
-        Button_Create_Class.onclick = function(){
-          for(var j = 0; j<array_Block.length;j++){ 
-              array_Block[j].style.display = 'none';
-            }
-          Block_Create_Class.style.display = 'block';
-          
-        }
-
-        Button_Look_Up.onclick = function(){
-          for(var j = 0; j<array_Block.length;j++){ 
-              array_Block[j].style.display = 'none';
-            }
-          Block_Look_Up.style.display = 'block';
-          
-        }
-
-        Button_Cal.onclick = function(){
-          for(var j = 0; j<array_Block.length;j++){ 
-              array_Block[j].style.display = 'none';
-            }
-          Block_Cal.style.display = 'block';
-          
-        }
-        var Block_Create = document.getElementById("Block_Create");
-      }
-      
 
     </script>
     <script type="text/javascript">
-      <?php
-      // Connect to database server
-      $servername = "127.0.0.1";
-      $username = "root";
-      $password = "heizhenzhu";
-      $semester = "2018_Spring" // $_POST['Semester']
-      $database_name = $semester."_Course_Evl";
-
-      $con = new mysqli($servername,$username,$password);
-      if($con -> connect_error){
-        die("Connection failed: " . $conn->connect_error);
-      }
-        /*
-      // Create database
-      $sql = "Create DATABASE springf($database_name)"
-      echo $sql;
-      if ($conn->query($sql) === TRUE) {
-          echo "Database created successfully";
-      } else {
-          echo "Error creating database: " . $conn->error;
-      }   
-      ?>
-
-
-
-      <?php
-      //Create Table
-      if($_POST["Professor_name"]!=""){
-      $Professor = $_POST["Professor_name"];
-      $CourseID = explode('-', $_POST["Course"])[0];
-      $CourseName = explode('-', $_POST["Course"])[1];
-      $Section_num = $_POST["Num_Of_Section"];
-      $Semester = $_POST["Semester"];
-      $Description = $_POST["Description"];
-      //Is table not exist create table
-      $sql = "CREATE TABLE (
-      Professor VARCHAR(30)  PRIMARY KEY, 
-      CourseID INT(6) NOT NULL,
-      CourseName VARCHAR(50) NOT NULL,
-      Section INT(3) NOT NULL, 
-      Semester Varchar(30)
-      Create_Date Date
-      )";
-
-      //Insert into table 
-      //output: the course is created successfuly.
-      //See class.
-    if ($conn->query($sql) === TRUE) {
-         $status = $conn->query($sql);
-    } else {
-         $status = $conn->error;
-        //echo "Error creating table: " . $conn->error;
-    }
-    };*/
-    ?>
-    
-     var Success_create_table = <?php echo(json_encode($status)); ?>;
-     if(Success_create_table != True){
-      var text = <?php echo(json_encode($status)); ?>;
-      alert(text)
-     }
-
-     //Insert data
+   
 </script>
 
     <style type="text/css">
@@ -247,7 +147,7 @@
       </article>
        
         <section class="col-sm-4 offset-sm-4 to_right">
-          <b>Welcome, <?php echo ' Professor '.$_POST["NetID"]?> |</b>
+          <b>Welcome</b>
 
           <button type="button" class="btn btn-primary"><a href="/">Log Out</a></button>
         </section>
@@ -255,23 +155,11 @@
     </section>
 
   </header>
+  
+ 
+   <!--
+    <form method="post" action="">
 
-  <section class="container-fluid seperate_more">
-    <section class="row">
-      <article class="col-sm-4">
-        <button type="button" class="btn btn-outline-primary" id = 'Button_Create_Class'>Create Class</button>
-      </article>
-       
-      <article class="col-sm-4">
-        <button type="button" class="btn btn-outline-info" id = 'Button_Look_Up'>Look Up Course Evaluation</button>
-      </article> 
-          
-      <article class="col-sm-4">
-        <button type="button" class="btn btn-outline-secondary" id="Button_Cal">Calendar</button>
-      </article> 
-      
-    </section>
-    <form method="post" action="Prefessor_Page.php">
     <section class="container-fluid seperate_more">
     <section class="row">
       <article class="col-sm-12" id="Block_Cal" style="display: block;"">
@@ -279,6 +167,7 @@
       </article>
 
       <article class="col-sm-8 offset-sm-2 seperate_top" id="Block_Create_Class" style="display: none;">
+
            <section class="form-group">
             <ul class="list-group">
               <li class="list-group-item">
@@ -290,7 +179,7 @@
                 <label for="S">Semester:</label>
                 <input type="text" class="form-control" id="S" name="Semester">
               </li>
-
+  
               <li class="list-group-item">
                 <label for="C">Course:</label>
                 <input type="text" class="form-control" id="C" name="Course">
@@ -322,7 +211,7 @@
       </article>
       </form>
       
-
+-->
     </section>
 
   </section>
