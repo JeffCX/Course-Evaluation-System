@@ -59,7 +59,7 @@
   <header class="container">
     <section class="row">
       <article class="col-sm-12">
-        <img src='assets/tandon_long_color.jpg' alt="Tandon_logo">
+        <img src='https://github.com/JeffCX/image-host/blob/master/tandon_long_color.jpg?raw=true' alt="Tandon_logo">
       </article>
     </section>
   </header>
@@ -67,6 +67,18 @@
   <section class="container">
     <article class="row">
       <section class="col-sm-12 decorate">
+        {{if   not (eq .Title "")   }}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
+              <strong>{{.Title}}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+          {{end}}
+          
+   
+  
           <h1>Welcome To NYU Course Evalution System</h1>
           <form action="/login/" id = "Form_Submit" method="post">
             <section class="container">

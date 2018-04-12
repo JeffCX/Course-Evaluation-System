@@ -21,7 +21,12 @@ func MyHandler(w http.ResponseWriter, r *http.Request) {
     session.Values[42] = 43
     fmt.Println(session.Values)
     // Save it before we write to the response/return from the handler.
+    
+    fmt.Println(session)
+    
     session.Save(r, w)
+
+    session = nil
     fmt.Println(session)
 }
 
