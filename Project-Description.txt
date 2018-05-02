@@ -2,20 +2,24 @@ Project for Class Intro to Database
 Build a course evaluation system using flask, html, css, bootstramp, jquery, javascript,MySQL
 
 Project Description
-1. Design, develop, and implement a timely course evaluation system.
-2. There are two user-types for the system: students and professors.
+1. Design, develop, and implement a timely course evaluation system. Done
+2. There are two user-types for the system: students and professors. Done
 3. The students can select (“tick”) a metric (excellent, very good, etc.) to
 evaluate the class that just finished and provide comments and suggestions as
-typed-in text.
+typed-in text. To be com
 4. Only the students enrolled in the class can access the system. Once logged
-in, their responses must be anonymous.
+in, their responses must be anonymous.to be comp
 5. The system should support simultaneous access by all students registered
-in the course.
+in the course. Not sure
+
 6. The system should handle each student “session” as a single transaction.
 The students can select (“tick”) a metric and provide comments/suggestions
 or “tick” a metric (providing comments/suggestions without selecting a
 metric is not possible).
+
 7. Professors can produce reports (total numbers for each metric by class
 session for each course, total numbers for each metric by semester-up-to-date
 for each course, comparisons between metrics for two consecutive class
-sessions for each course, and charts for every report).
+sessions for each course, and charts for every report). done
+
+Session and metric  ER diagram Presentation

@@ -297,14 +297,13 @@
 
     <button class="btn btn-outline-success" type="button" id="create_class">Create Class</button>
     <button class="btn btn-outline-success" type="button" id="look_up" >Look Up Class Report</button>
-
  
 </nav>
       
 
 
 <section  class="container-fluid">
-
+<form action="/create/" method="post">
 <section class="row">
       <div class="col-sm-12 offset-sm-3" id="show_create" style="display: block;">
         <ul class="list-group form-group">
@@ -315,18 +314,21 @@
           </li>
           <li class="list-group-item">
           
-    <input type="email" class="form-control"  placeholder="Enter Course ID (Exp:CS2124)" name="CourseID">
+    <input type="text" class="form-control"  placeholder="Enter Course ID (Exp:CS2124)" name="CourseID">
           </li>
           <li class="list-group-item">       
-           <input type="text" class="form-control" placeholder="Enter Instructor's ID" ame="InstructorID">
+           <input type="text" class="form-control" placeholder="Enter Instructor's ID" name="InstructorID">
           </li>
          <li class="list-group-item">     
-           <input type="email" class="form-control" placeholder="Enter Semseter: (Exp:2018 Spring)" name="semseter">
+           <input type="text" class="form-control" placeholder="Enter Semseter: (Exp:2018 Spring)" name="semseter">
+          </li>
+           <li class="list-group-item">     
+           <input type="submit" class="btn btn-primary" style="width:100%;" >
           </li>
         </ul>
       </div>
     <div class="col-sm-12" id="show_report" style="display: none;">
-      
+    </form>
 <div id="container_instructor" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
 <div id="container_course" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto;margin-top: 10vh;"></div>
     <script type="text/javascript">
