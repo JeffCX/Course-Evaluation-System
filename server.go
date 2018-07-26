@@ -57,32 +57,32 @@ func check_code(code string) bool {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if (session["status"]=="Invalid"){
 		p := NewsAggPage{Title: "Invalid credientals", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	    session["status"]="temp"
 	}else if (session["status"]=="WrongCode"){
 		p := NewsAggPage{Title: "Incorrect Permission Code", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	    session["status"]="temp"
 	}else if(session["status"]=="RepeatName"){
 		p := NewsAggPage{Title: "Users name already taken", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	    session["status"]="temp"
 
 	}else if (session["status"]=="logOut"){
 		p := NewsAggPage{Title: "You are logout", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	    session["status"]="temp"
 	}else if (session["status"]=="LoginFirst"){
 		p := NewsAggPage{Title: "You need to login first!", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	}else{
 	    p := NewsAggPage{Title: "", News: "some news"}
-	    t, _ := template.ParseFiles("index.html")
+	    t, _ := template.ParseFiles("templates/index.html")
 	    t.Execute(w, p)
 	}
 }
@@ -105,7 +105,7 @@ func studentHandler(w http. ResponseWriter, r *http.Request) {
 
 
 		haha:=classes_struct{M:m,N:n}
-	    t, _ := template.ParseFiles("cart.html")
+	    t, _ := template.ParseFiles("templates/cart.html")
 	    t.Execute(w, haha)
 	}else {
 		session["status"]="LoginFirst"
@@ -122,7 +122,7 @@ func professorHandler(w http.ResponseWriter, r *http.Request){
 
     if(check_session(Username,Password)) {
 		p := NewsAggPage{Title: "Amazing News Aggregator", News: "some news"}
-	    t, _ := template.ParseFiles("professor_try.html")
+	    t, _ := template.ParseFiles("templates/professor_try.html")
 	    t.Execute(w, p)
 	}else {
 		session["status"]="LoginFirst"
@@ -133,7 +133,7 @@ func professorHandler(w http.ResponseWriter, r *http.Request){
 
 func submitHandler(w http.ResponseWriter, r *http.Request){
 	p := NewsAggPage{Title: "Amazing News Aggregator", News: "some news"}
-    t, _ := template.ParseFiles("submit.html")
+    t, _ := template.ParseFiles("templates/submit.html")
     t.Execute(w, p)
 }
 
@@ -452,7 +452,7 @@ func EvaluteHandler(w http.ResponseWriter,r *http.Request) {
 
 
 	
-    t, _ := template.ParseFiles("student.html")
+    t, _ := template.ParseFiles("templates/student.html")
     t.Execute(w, m)
 	}else {
     		session["status"]="LoginFirst"
